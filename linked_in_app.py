@@ -131,7 +131,7 @@ income = st.selectbox("Select your Household Income level:",
                         "40,000 to $50,000",
                         "50,000 to $75,000",
                         "75,000 to $100,000",
-                        "100 ,000 to $150,000",
+                        "100,000 to $150,000",
                         "$150,000 or more"
                          ])
 #st.write(f"Household Income is {income}")
