@@ -167,8 +167,32 @@ predicted_class = lr.predict([person])
 probs = lr.predict_proba([person])
 
 # Print predicted class and probability
-st.markdown(f"Predicted class: {predicted_class[0]}") # 0=not a user, 1= user
-st.markdown(f"Probability that this person is a LinkedIn User: {probs[0][1]}")
+#st.markdown(f"Predicted class: {predicted_class[0]}") # 0=not a user, 1= user
+
+#st.markdown(f"Probability that this person is a LinkedIn User: {probs[0][1]}")
+probability = round(probs[0][1]*100,2)
+
+st.header(f"Probability of being a LinkedIn User: {probability}%")
+
+if probability >= 50:
+    isit = "Likely"
+else: 
+    isit = "Unlikely"
 
 
-st.subheader("The foundations of the app are based on Machine Learning principles and Logistic Regression.")
+fig = go.Figure(go.Indicator(
+    mode = "gauge+number",
+    value = probability,
+    title = {'text': f"{isit} a LinkedIn User"},
+    gauge = {"axis": {"range": [0, 100]},
+            "steps": [
+                {"range": [0, 50], "color":"#E2E2E2"},
+                {"range": [50, 100], "color":"#1F77B4"}
+            ],
+            "bar":{"color":"white"}}
+))
+
+st.plotly_chart(fig)
+
+st.markdown("The foundations of the app are based on Machine Learning principles and Logistic Regression.")
+st.markdown("Produced by Abigail Hoffman under instruction from Dr. Lyon at Georgetown University.")
