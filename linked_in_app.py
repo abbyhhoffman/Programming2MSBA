@@ -125,13 +125,13 @@ else:
 
 income = st.selectbox("Select your Household Income level:", 
              options = ["Less than $10,000",
-                        "10,000 to $20,000",
-                        "20,000 to $30,000",
-                        "30,000 to $40,000",
-                        "40,000 to $50,000",
-                        "50,000 to $75,000",
-                        "75,000 to $100,000",
-                        "100,000 to $150,000",
+                        "$10,000 to $20,000",
+                        "$20,000 to $30,000",
+                        "$30,000 to $40,000",
+                        "$40,000 to $50,000",
+                        "$50,000 to $75,000",
+                        "$75,000 to $100,000",
+                        "$100,000 to $150,000",
                         "$150,000 or more"
                          ])
 #st.write(f"Household Income is {income}")
@@ -140,19 +140,19 @@ income = st.selectbox("Select your Household Income level:",
 
 if income == "Less than $10,000":
    income = 1
-elif income == "10,000 to $20,000":
+elif income == "$10,000 to $20,000":
     income = 2
-elif income == "20,000 to $30,000":
+elif income == "$20,000 to $30,000":
      income = 3
-elif income == "30,000 to $40,000":
+elif income == "$30,000 to $40,000":
     income = 4
-elif income == "40,000 to $50,000":
+elif income == "$40,000 to $50,000":
     income = 5
-elif income == "50,000 to $75,000":
+elif income == "$50,000 to $75,000":
     income = 6
-elif income == "75,000 to $100,000":
+elif income == "$75,000 to $100,000":
     income = 7
-elif income == "100,000 to $150,000":
+elif income == "$100,000 to $150,000":
     income= 8
 else:
     income = 9
